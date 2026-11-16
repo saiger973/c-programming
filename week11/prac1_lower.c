@@ -1,18 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void) {
     char str[100];
-    char *p;
     int count = 0;
 
     printf("영문 문장을 입력하시오 : ");
-    fgets(str, sizeof(str), stdin);
+    if (fgets(str, sizeof(str), stdin) == NULL) {
+        return 1;
+    }
+    str[strcspn(str, "\n")] = '\0';
 
-    for (p = str; *p != '\0'; p++) {
-        if (*p == '\n') {
-            *p = '\0';
-            break;
-        }
+    for (char *p = str; *p != '\0'; p++) {
         if (*p >= 'A' && *p <= 'Z') {
             *p = *p - 'A' + 'a';
         }
