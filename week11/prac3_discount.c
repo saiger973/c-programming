@@ -18,7 +18,7 @@ int main(void) {
     int percent;
 
     printf("할인율(%%)을 입력하시오 : ");
-    scanf("%d", &percent);
+    scanf_s("%d", &percent);
 
     printf("할인 전 : ");
     print_prices(price, 5);
