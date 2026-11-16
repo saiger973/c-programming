@@ -10,7 +10,7 @@ int main(void) {
     int total, h, m, s;
 
     printf("총 시간(초)을 입력하시오 : ");
-    scanf("%d", &total);
+    scanf_s("%d", &total);
 
     to_hms(total, &h, &m, &s);
     printf("%d시간 %d분 %d초\n", h, m, s);
